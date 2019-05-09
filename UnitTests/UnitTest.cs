@@ -60,5 +60,29 @@ namespace UnitTests
             Assert.AreEqual(expected, result);
         }
 
+        [TestMethod]
+        public void SqrtTest()
+        {
+            double x = -81;
+
+            Complex[] result = { new Complex(), new Complex() };
+            Complex[] expected = { new Complex(), new Complex() };
+
+            expected[0].a = 0.0;
+            expected[0].b = 9.0;
+            expected[1].a = 0.0;
+            expected[1].b =-9.0;
+
+            Calculator Calc = new Calculator();
+
+            result = Calc.Sqrt(x);
+
+            Assert.AreEqual(expected[0].a, result[0].a);
+            Assert.AreEqual(expected[0].b, result[0].b);
+
+            Assert.AreEqual(expected[1].a, result[1].a);
+            Assert.AreEqual(expected[1].b, result[1].b);
+        }
+
     }
 }
